@@ -5,15 +5,79 @@
 }
 
 :root {
+
+    /* ----------- dimensions  ------------- */
+
     --document-width: 1600px;
+
+    --header-height: 110px;
+
+    --section-promo-height: 750px;
+    --section-about-height: 710px;
+    --section-ingredients-height: 757px;
+    --section-menu-height: 994px;
+    --section-reviews-height: 759px;
+    --section-reservations-height: 710px;
+
+    --footer-height: 320px;
+
+    --section-padding: 215px;
 }
+
+/* -------------- MAIN  ---------------- */
 
 body {
     display: grid;
+    grid-template-rows:
+        var(--section-promo-height) var(--section-about-height) var(--section-ingredients-height) var(--section-menu-height) var(--section-reviews-height) var(--section-reservations-height);
+    grid-row-gap: 0px;
     width: var(--document-width);
     margin: 0 auto;
-    text-align: center;
-    border: 1px solid white;
-    height: 100vh;
+}
+
+header {
+    position: absolute;
+    width: var(--document-width);
+    height: var(--header-height);
     background-color: red;
+}
+
+section,
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(12, 70px);
+    grid-gap: 30px;
+    grid-template-areas: "1c 2c 3c 4c 5c 6c 7c 8c 9c 10c 11c 12c";
+    padding: 0 var(--section-padding);
+    border: 1px solid yellow;
+    background-color: grey;
+}
+
+footer {
+    height: var(--footer-height);
+    background-color: black;
+}
+
+
+/* -------------- STYLING HEADER ---------------- */
+
+
+/* -------------- STYLING SECTIONS ---------------- */
+
+.promo {}
+
+.about {}
+
+.ingredients {}
+
+.menu {}
+
+.reviews {}
+
+.reservations {}
+
+/* -------------- STYLING FOOTER ---------------- */
+
+.footer-container {
+    height: 100%;
 }
