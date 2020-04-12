@@ -10,7 +10,7 @@
 
     --document-width: 1600px;
 
-    --header-height: 110px;
+    --header-height: 120px;
 
     --section-promo-height: 750px;
     --section-about-height: 710px;
@@ -25,9 +25,16 @@
 
     /* -------------- colors  --------------- */
 
+    --header-logo: #ffffff;
+    --header-navigation: rgba(255, 255, 255, 255);
+    --header-navigation-off: rgba(255, 255, 255, 0);
+    --header-social: #dab33e;
+
+    --header-background-top: rgba(0, 0, 0, 0.4);
+    --header-background-bottom: rgba(0, 0, 0, 0.0);
+
     --footer-text-color: #fefefe;
     --footer-background-color: #191919;
-
 
 }
 
@@ -44,9 +51,12 @@ body {
 
 header {
     position: absolute;
+    display: flex;
+    flex-wrap: wrap;
     width: var(--document-width);
     height: var(--header-height);
-    background-color: red;
+    padding: 0 185px;
+    background-image: linear-gradient(var(--header-background-top), var(--header-background-bottom));
 }
 
 section,
@@ -72,6 +82,67 @@ footer {
 
 /* -------------- STYLING HEADER ---------------- */
 
+.header-logo {
+    flex-grow: 100;
+    display: flex;
+    align-items: center;
+    flex: 1 1 300px;
+    height: 100%;
+    font-size: 36px;
+    color: var(--header-logo);
+    font-family: "Yeseva One";
+    font-weight: 400;
+    text-align: left;
+}
+
+.header-navigation {
+    display: flex;
+    flex: 1 1 700px;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header-navigation>ul {
+    display: flex;
+    align-items: stretch;
+    align-content: center;
+    flex: 2 1 400px;
+    justify-content: space-between;
+    text-decoration: none;
+    height: 100%;
+}
+
+.header-navigation>ul>li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+    color: var(--header-navigation);
+    font-family: "Gentium Book Basic";
+    font-weight: 700;
+    border-top: 4px solid var(--header-navigation-off);
+}
+
+.header-navigation>ul>li:hover {
+    border-top: 4px solid var(--header-navigation);
+}
+
+.header-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+}
+
+.header-social>i {
+    font-size: 21px;
+    width: 35px;
+    text-align: center;
+    color: var(--header-social);
+    ;
+}
 
 /* -------------- STYLING SECTIONS ---------------- */
 
@@ -115,7 +186,7 @@ footer {
     height: 52px;
 }
 
-.footer-container-section-decoration > img {
+.footer-container-section-decoration>img {
     width: 55%;
     height: 52px;
     opacity: 0.5;
