@@ -59,18 +59,24 @@ header {
     background-image: linear-gradient(var(--header-background-top), var(--header-background-bottom));
 }
 
-section,
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(12, 70px);
-    grid-gap: 30px;
-    grid-template-areas: "1c 2c 3c 4c 5c 6c 7c 8c 9c 10c 11c 12c";
-    padding: 0 var(--section-padding);
-}
-
 section {
     border: 1px solid yellow;
     background-color: grey;
+}
+
+.section-container,
+.footer-container {
+    padding: 0 var(--section-padding);
+    display: grid;
+    grid-template-columns: repeat(12, 70px);
+    grid-gap: 0 30px;
+    grid-template-areas: "1c | 2c | 3c | 4c | 5c | 6c | 7c | 8c | 9c | 10c | 11c | 12c";
+    height: 100%;
+    align-content: end;
+}
+
+.section-container {
+    /* background-color: red; */
 }
 
 footer {
@@ -151,7 +157,73 @@ footer {
 
 /* -------------- STYLING SECTIONS ---------------- */
 
-.promo {}
+
+/* -------------- PROMO ---------------- */
+
+.promo {
+    padding: 110px 0;
+    background-image: url(../images/promo-background.jpg);
+}
+
+.promo .section-container {}
+
+.promo .section-container>h2 {
+    grid-column: span 12;
+    font-size: 90px;
+    line-height: 114px;
+    color: #ffffff;
+    font-family: "Yeseva One";
+    font-weight: 400;
+    text-align: center;
+    filter: drop-shadow(0.469px 0.883px 1px rgba(1, 1, 1, 0.64));
+}
+
+.promo-decoration {
+    grid-column: span 12;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.promo-decoration>img {
+    text-align: center;
+    width: 240px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.promo-buttons {
+    height: 90px;
+    grid-column: span 12;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.promo-black-button,
+.promo-white-button {
+    margin: 0 20px;
+    width: 228px;
+    height: 57px;
+    font-family: "Lato";
+    font-weight: 400;
+    text-align: center;
+    font-size: 18px;
+}
+
+.promo-black-button {
+    background-color: rgba(0, 0, 0, 0.7019607843137254);
+    border: 1px solid #000000;
+    color: #ffffff; 
+}
+
+.promo-white-button {
+    background-color: rgba(255, 255, 255, 0.2784313725490196);
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+/* -------------- end ---------------- */
 
 .about {}
 
