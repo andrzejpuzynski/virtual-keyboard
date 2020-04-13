@@ -534,14 +534,138 @@ footer {
     color: #dde0df;
     font-family: "Lato";
     font-weight: 400;
-
     text-align: center;
     align-self: stretch;
 }
 
 /* -------------- RESERVATIONS SECTION ---------------- */
 
-.reservations {}
+.reservations {
+    padding: 100px 0;
+    background: url(../images/reservations-pattern.png);
+}
+
+.reservations-photo-1 {
+    height: 100%;
+    grid-column: span 3;
+}
+
+.reservations-photo-2 {
+    height: 100%;
+    grid-column: span 3;
+}
+
+.reservations-info {
+    grid-column: 7 / 13;
+    display: grid;
+    grid-template-rows: 36px 68px 1fr 220px;
+    padding: 0 66px;
+    position: relative;
+}
+
+.reservations-info>h2 {
+    font-size: 36px;
+    font-family: "Yeseva One";
+    font-weight: 400;
+    color: #cc9900;
+    text-align: center;
+}
+
+.reservations-decoration {
+    display: flex;
+}
+
+.reservations-decoration>img {
+    text-align: center;
+    width: 260px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 6px;
+}
+
+.reservations-text {
+    align-self: stretch;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4c4c4c;
+    font-family: "Lato";
+    font-weight: 400;
+    text-align: center;
+    align-self: stretch;
+}
+
+.reservations-text>p {
+    margin-bottom: 5px;
+}
+
+.reservations-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    justify-content: center;
+}
+
+.reservations-form-item:nth-child(1n) {
+    margin-right: 12px;
+}
+
+.reservations-form-item:nth-child(2n) {
+    margin-left: 12px;
+}
+
+.reservations-form-item {
+    width: 200px;
+    height: 90px;
+}
+
+.reservations-form-item>label,
+.reservations-form-item>input {
+    display: block;
+    width: 100%;
+}
+
+.reservations-form-item>label {
+    height: 26px;
+    font-size: 14px;
+    color: #c9a131;
+    font-family: "Open Sans";
+    font-weight: 700;
+}
+
+.reservations-form-item>input {
+    width: 200px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid #7c7c7c;
+    font-size: 16px;
+    color: #7c7c7c;
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-style: italic;
+    padding: 0 12px;
+}
+
+.reservations-form-item>input:hover {
+    border: 1px solid #c89f2d;
+}
+
+.reservations-form-item>button {
+    width: 200px;
+    height: 36px;
+    font-size: 14px;
+    background-color: #c9a131;
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-weight: 400;
+    text-align: center;
+}
+
 
 /* -------------- STYLING FOOTER ---------------- */
 
