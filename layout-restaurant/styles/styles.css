@@ -238,7 +238,8 @@ footer {
     grid-template-rows: 36px 68px 1fr 250px;
     padding: 0 66px;
     position: relative;
-]}
+    ]
+}
 
 .about-info>h2 {
     font-size: 36px;
@@ -266,7 +267,8 @@ footer {
     align-self: stretch;
     font-size: 16px;
     line-height: 24px;
-    color: #4c4c4c;;
+    color: #4c4c4c;
+    ;
     font-family: "Lato";
     font-weight: 400;
     text-align: center;
@@ -351,7 +353,119 @@ footer {
 
 /* -------------- MENU SECTION ---------------- */
 
-.menu {}
+.menu {
+    padding: 100px 0 90px 0;
+    background: url(../images/about-pattern.png);
+}
+
+.menu-column-1 {
+    grid-column: span 6;
+}
+
+.menu-column-2 {
+    grid-column: span 6;
+}
+
+.menu-column {
+    align-content: start;
+    padding: 0 60px;
+}
+
+.menu-column>h2 {
+    grid-column: span 2;
+    height: 36px;
+    font-size: 36px;
+    font-family: "Yeseva One";
+    font-weight: 400;
+    color: #cc9900;
+    text-align: center;
+}
+
+.menu-column>h2:not(:first-child) {
+    margin-top: 50px;
+}
+
+.menu-decoration {
+    display: flex;
+    grid-column: span 2;
+    height: 68px;
+}
+
+.menu-decoration>img {
+    text-align: center;
+    width: 260px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.menu-dish {
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: 1fr 56px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.special {
+    border: 1px solid #c89f2d;
+}
+
+.special:after {
+    content: "Special";
+    position: absolute;
+    width: 70px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #f8fafa;
+    font-family: "Lato";
+    text-align: center;
+    transform: translateY(-100%) translateX(367px);
+    border: 1px solid #c89f2d;
+    background-color: #c89f2d;
+}
+
+.menu-dish-name {
+    grid-column: 1;
+    height: 30px;
+    text-align: left;
+    font-size: 21px;
+    line-height: 30px;
+    color: #c89f2d;
+    font-family: "Yeseva One";
+    font-weight: 400;
+}
+
+.menu-dish-price {
+    grid-column: 2;
+    height: 30px;
+    text-align: right;
+    font-size: 21px;
+    line-height: 30px;
+    color: #c89f2d;
+    font-family: "Yeseva One";
+    font-weight: 400;
+}
+
+.menu-dish-info {
+    grid-column: span 2;
+    height: 55px;
+    font-size: 16px;
+    line-height: 60px;
+    color: #4c4c4c;
+    font-family: "Lato";
+    font-weight: 400;
+}
+
+.menu-dish-info:before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #c89f2d;
+    transform: translateY(10px);
+}
 
 /* -------------- REVEIEWS SECTION ---------------- */
 
