@@ -227,7 +227,63 @@ footer {
 
 /* -------------- ABOUT SECTION ---------------- */
 
-.about {}
+.about {
+    padding: 100px 0;
+    background: url(../images/about-pattern.png);
+}
+
+.about-info {
+    grid-column: 1 / 7;
+    display: grid;
+    grid-template-rows: 36px 68px 1fr 250px;
+    padding: 0 66px;
+    position: relative;
+]}
+
+.about-info>h2 {
+    font-size: 36px;
+    font-family: "Yeseva One";
+    font-weight: 400;
+    color: #cc9900;
+    text-align: center;
+}
+
+.about-decoration {
+    display: flex;
+}
+
+.about-decoration>img {
+    text-align: center;
+    width: 260px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 6px;
+}
+
+.about-text {
+    align-self: stretch;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4c4c4c;;
+    font-family: "Lato";
+    font-weight: 400;
+    text-align: center;
+    align-self: stretch;
+}
+
+.about-cook {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about-illustration {
+    height: 200px;
+    grid-column: 7;
+    transform: translateX(-80px) translateY(-45px);
+}
 
 /* -------------- INGREDIENTS SECTION ---------------- */
 
