@@ -299,7 +299,75 @@ footer {
 
 /* -------------- REVEIEWS SECTION ---------------- */
 
-.reviews {}
+.reviews {
+    padding: 100px 0;
+    background-image: url(../images/reviews-background.jpg);
+    background-position: bottom center;
+}
+
+.reviews-info {
+    grid-column: 3 / -3;
+    padding: 75px;
+    display: grid;
+    grid-template-rows: 42px 62px auto auto;
+    background-color: rgba(0, 0, 0, 0.67);
+}
+
+.reviews-info>h2 {
+    font-size: 36px;
+    color: #ffffff;
+    font-family: "Yeseva One";
+    font-weight: 400;
+    text-align: center;
+}
+
+.reviews-decoration {
+    display: flex;
+}
+
+.reviews-decoration>img {
+    text-align: center;
+    width: 260px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 6px;
+}
+
+.reviews-quote {
+    align-self: stretch;
+    font-size: 25px;
+    line-height: 45px;
+    color: #dde0df;
+    font-family: "Gentium Book Basic";
+    font-weight: 700;
+    text-align: center;
+    align-self: stretch;
+}
+
+.reviews-quote:before {
+    content: '“';
+    position: absolute;
+    transform: translateX(-54px) translateY(-4px);
+    font-size: 66px;
+    line-height: 45px;
+    color: rgba(244, 244, 244, 0.5);
+    font-family: "Georgia";
+    text-align: center;
+}
+
+.reviews-quote-author {
+    align-self: stretch;
+    font-size: 18px;
+    line-height: 45px;
+    color: #dde0df;
+    font-family: "Lato";
+    font-weight: 400;
+
+    text-align: center;
+    align-self: stretch;
+}
 
 /* -------------- RESERVATIONS SECTION ---------------- */
 
