@@ -561,7 +561,7 @@ footer {
 .reservations-info {
     grid-column: 7 / 13;
     display: grid;
-    grid-template-rows: 36px 68px 1fr 220px;
+    grid-template-rows: 36px 68px 180px 220px;
     padding: 0 66px;
     position: relative;
 }
