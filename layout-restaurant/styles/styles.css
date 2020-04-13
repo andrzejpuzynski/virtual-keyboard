@@ -13,11 +13,11 @@
     --header-height: 120px;
 
     --section-promo-height: 750px;
-    --section-about-height: 710px;
-    --section-ingredients-height: 757px;
-    --section-menu-height: 994px;
-    --section-reviews-height: 759px;
-    --section-reservations-height: 710px;
+    --section-about-height: 750px;
+    --section-ingredients-height: 750px;
+    --section-menu-height: 750px;
+    --section-reviews-height: 750px;
+    --section-reservations-height: 1070px;
 
     --footer-height: 320px;
 
@@ -43,7 +43,7 @@
 body {
     display: grid;
     grid-template-rows:
-        var(--section-promo-height) var(--section-about-height) var(--section-ingredients-height) var(--section-menu-height) var(--section-reviews-height) var(--section-reservations-height);
+        var(--section-promo-height) var(--section-about-height) var(--section-ingredients-height) minmax(var(--section-menu-height), 1fr) var(--section-reviews-height) minmax(var(--section-reservations-height), 1fr);
     grid-row-gap: 0px;
     width: var(--document-width);
     margin: 0 auto;
@@ -81,6 +81,8 @@ section {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
     height: var(--footer-height);
     padding: 52px 0;
     background-color: var(--footer-background-color);
@@ -542,7 +544,7 @@ footer {
 /* -------------- RESERVATIONS SECTION ---------------- */
 
 .reservations {
-    padding: 100px 0;
+    padding: 110px 0;
     background: url(../images/reservations-pattern.png);
 }
 
