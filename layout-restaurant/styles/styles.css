@@ -72,7 +72,7 @@ section {
     grid-gap: 0 30px;
     grid-template-areas: "1c | 2c | 3c | 4c | 5c | 6c | 7c | 8c | 9c | 10c | 11c | 12c";
     height: 100%;
-    align-content: end;
+    align-content: stretch;
 }
 
 .section-container {
@@ -165,7 +165,9 @@ footer {
     background-image: url(../images/promo-background.jpg);
 }
 
-.promo .section-container {}
+.promo .section-container {
+    align-content: end;
+}
 
 .promo .section-container>h2 {
     grid-column: span 12;
@@ -214,7 +216,7 @@ footer {
 .promo-black-button {
     background-color: rgba(0, 0, 0, 0.7019607843137254);
     border: 1px solid #000000;
-    color: #ffffff; 
+    color: #ffffff;
 }
 
 .promo-white-button {
@@ -223,15 +225,83 @@ footer {
     color: #ffffff;
 }
 
-/* -------------- end ---------------- */
+/* -------------- ABOUT SECTION ---------------- */
 
 .about {}
 
-.ingredients {}
+/* -------------- INGREDIENTS SECTION ---------------- */
+
+.ingredients {
+    padding: 100px 0;
+    background-image: url(../images/ingredients-background.jpg);
+}
+
+.ingredients-info {
+    grid-column: 7 / -1;
+    padding: 75px;
+    display: grid;
+    grid-template-rows: 42px 62px 1fr 114px;
+    background-color: rgba(0, 0, 0, 0.67);
+}
+
+.ingredients-info>h2 {
+    font-size: 36px;
+    color: #ffffff;
+    font-family: "Yeseva One";
+    font-weight: 400;
+    text-align: center;
+}
+
+.ingredients-decoration {
+    display: flex;
+}
+
+.ingredients-decoration>img {
+    text-align: center;
+    width: 260px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 6px;
+}
+
+.ingredients-text {
+    align-self: stretch;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    font-family: "Lato";
+    font-weight: 400;
+    text-align: center;
+    align-self: stretch;
+}
+
+.ingredients-photos {
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ingredients-photos>img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    padding: 0px;
+    border: 5px solid rgba(255, 255, 255, 0.09);
+}
+
+
+/* -------------- MENU SECTION ---------------- */
 
 .menu {}
 
+/* -------------- REVEIEWS SECTION ---------------- */
+
 .reviews {}
+
+/* -------------- RESERVATIONS SECTION ---------------- */
 
 .reservations {}
 
