@@ -1,0 +1,31 @@
+{
+  "name": "andrzejpuzynski-rsspl2020q1",
+  "version": "1.0.0",
+  "description": "Layout Restaurant task",
+  "main": "virtual-keyboard/src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --startPath='virtual-keyboard/' --server --files='./virtual-keyboard/**/**'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/andrzejpuzynski-RSSPL2020Q1.git"
+  },
+  "keywords": [
+    "Virtual",
+    "Keyboard",
+    "task"
+  ],
+  "author": "Andrzej Puzynski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/andrzejpuzynski-RSSPL2020Q1/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/andrzejpuzynski-RSSPL2020Q1#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0"
+  }
+}
