@@ -4,8 +4,9 @@
   "description": "Layout Restaurant task",
   "main": "virtual-keyboard/src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browser-sync start --startPath='virtual-keyboard/' --server --files='./virtual-keyboard/**/**'"
+    "start": "webpack-dev-server --open",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,14 @@
   },
   "homepage": "https://github.com/rolling-scopes-school/andrzejpuzynski-RSSPL2020Q1#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.7"
+    "browser-sync": "^2.26.7",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.5.3",
+    "html-webpack-plugin": "^4.3.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0"
