@@ -1,1 +1,0 @@
-export const alert = () => console.log("Webpack config ready")
