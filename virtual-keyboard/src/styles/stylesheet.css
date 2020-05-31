@@ -49,6 +49,8 @@ body {
     background-color: var(--textAreaBackground);
     border: 1px solid var(--border);
     border-radius: 8px;
+    resize: none;
+    outline: none;
 }
 
 .vk-keyboard {
@@ -75,16 +77,10 @@ body {
     color: var(--key-symbol);
     background: var(--key-inactive);
     border-radius: 4px;
-
-
 }
 
 .press {
     background: red;
-}
-
-textarea {
-    resize: none;
 }
 
 /* ----------- keys size in 1 row  ------------- */

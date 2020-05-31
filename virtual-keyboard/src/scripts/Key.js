@@ -1,10 +1,11 @@
 export default class Key {
     constructor({
-      lowerCase, upperCase, code,
+      lowerCase, upperCase, code, value
     }) {
       this.lowerCase = lowerCase;
       this.upperCase = upperCase;
       this.code = code;
+      this.value = value;
       this.renderHtml();
     }
   
@@ -17,6 +18,11 @@ export default class Key {
   
     char(capsOn) {
       return capsOn ? this.upperCase : this.lowerCase;
+    }
+
+    getvalue(capsOn) {
+      let val = this.value ? this.value : this.char(capsOn);
+      return val
     }
   
     setCapsLock(capsOn) {

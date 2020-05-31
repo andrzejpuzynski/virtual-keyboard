@@ -68,7 +68,7 @@ export const engKeyboard = [
       {
         "lowerCase": "Backspace",
         "upperCase": "Backspace",
-        "code": "Backspace"
+        "code": "Backspace",
       }
     ],
     [

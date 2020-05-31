@@ -11,6 +11,9 @@ class VirtualKeyboard {
     constructor(root) {
         this.keysSetup = [];
         this.capsLockOn = false;
+        this.alt = false;
+        this.ctrl = false;
+        this.shift = false;
         this.title = this.createTitle("Virtual Keyboard on MacBook Pro");
         this.textArea = this.createTextArea(8, 50);
         this.vkKeyboard = this.createVirtualKeyboardContainer();
@@ -88,13 +91,69 @@ class VirtualKeyboard {
                 e.preventDefault();       
             }
             key.press();
+            this.generateChar(key);
         });
         document.addEventListener('keyup', (e) => {
             const key = this.keysSetup.find((item) => item.code === e.code);
             key.up();
+            switch (key.code) {
+                case 'ShiftLeft':
+                case 'ShiftRight':
+                  if (!this.shift) {
+                    break;
+                  } else {
+                    this.shift = false;
+                    this.changeCaps();
+                    break;
+                  }
+                case 'AltLeft':
+                case 'AltRight':
+                    this.alt = false;
+                  break;
+                case 'ControlLeft':
+                case 'ControlRight':
+                    this.ctrl = false;
+                  break;
+                default:
+                    break;
+              }
         });
 
     }
+
+    generateChar(key) {
+        switch (key.code) {
+          case 'Backspace':
+            this.textArea.value = this.textArea.value.slice(0, -1);
+            break;
+          case 'ShiftLeft':
+          case 'ShiftRight':
+            if (this.shift) {
+              break;
+            } else {
+              this.shift = true;
+              this.changeCaps();
+              break;
+            }
+          case 'CapsLock':
+            break;
+          case 'AltLeft':
+          case 'AltRight':
+              this.alt = true;
+            break;
+          case 'ControlLeft':
+          case 'ControlRight':
+              this.ctrl = true;
+            break;
+          case 'MetaLeft':
+          case 'MetaRight':
+            break;
+          default:
+              this.textArea.value += key.getvalue(this.capsLockOn);
+              this.textArea.innerText = this.textArea.value;
+              break;
+        }
+      }
 
     get htmlElement() {
         return this.root;
