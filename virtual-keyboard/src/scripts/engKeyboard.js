@@ -221,7 +221,7 @@ export const engKeyboard = [
       {
         "lowerCase": "`",
         "upperCase": "~",
-        "code": "Backquote"
+        "code": "IntlBackslash"
       },
       {
         "lowerCase": "z",

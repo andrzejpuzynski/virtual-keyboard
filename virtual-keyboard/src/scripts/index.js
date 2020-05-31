@@ -82,6 +82,17 @@ class VirtualKeyboard {
         document.addEventListener('keyup', (e) => {
             e.code === "CapsLock" && this.changeCaps();
         });
+        document.addEventListener('keydown', (e) => {
+            const key = this.keysSetup.find((item) => item.code === e.code);
+            if (key.code === "Tab") {
+                e.preventDefault();       
+            }
+            key.press();
+        });
+        document.addEventListener('keyup', (e) => {
+            const key = this.keysSetup.find((item) => item.code === e.code);
+            key.up();
+        });
 
     }
 

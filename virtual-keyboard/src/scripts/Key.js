@@ -22,4 +22,12 @@ export default class Key {
     setCapsLock(capsOn) {
       this.keyel.innerText = this.char(capsOn);
     }
+
+    press() {
+      this.keyel.classList.add('press');
+    }
+
+    up() {
+      this.keyel.classList.remove('press');
+    }
   }
