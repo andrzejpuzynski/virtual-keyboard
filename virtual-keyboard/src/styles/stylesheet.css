@@ -20,6 +20,7 @@
     --key-active: #f00;
     --key-symbol: #eee;
     --border: #777;
+    --info: #355;
 }
 
 body {
@@ -81,6 +82,15 @@ body {
 
 .press {
     background: red;
+}
+
+.vk-info-lang {
+    text-align: center;
+    display: block;
+    width: 800px;
+    margin: 50px auto 0px auto;
+    font-size: 23px;
+    color: var(--info);
 }
 
 /* ----------- keys size in 1 row  ------------- */

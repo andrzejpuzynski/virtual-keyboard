@@ -15,20 +15,23 @@ const keyboardUkr = ukrKeyboard;
 class VirtualKeyboard {
   constructor(root) {
     this.keysSetup = [];
-    this.keyboardLanguage = this.setKeyboardLanguage();
+    this.keyboardLanguage = [];
     this.capsLockOn = false;
     this.alt = false;
     this.ctrl = false;
     this.shift = false;
+    this.setKeyboardLanguage();
     this.title = this.createTitle("Virtual Keyboard on MacBook Pro");
     this.textArea = this.createTextArea(8, 50);
     this.vkKeyboard = this.createVirtualKeyboardContainer();
+    this.changingLanguageInfo = this.createInfoAboutChangingLanguage();
     // creating virtual keyboard container
     this.vkContainer = document.createElement('div');
     this.vkContainer.classList.add('vk-container');
     this.vkContainer.appendChild(this.title);
     this.vkContainer.appendChild(this.textArea);
     this.vkContainer.appendChild(this.vkKeyboard);
+    this.vkContainer.appendChild(this.changingLanguageInfo);
 
     this.root = root;
     this.root.appendChild(this.vkContainer)
@@ -79,13 +82,25 @@ class VirtualKeyboard {
     return elkey.renderHtml();
   }
 
+  createInfoAboutChangingLanguage() {
+    const vkInfoAboutChangingLanguage = document.createElement('p');
+    vkInfoAboutChangingLanguage.className = 'vk-info-lang';
+    vkInfoAboutChangingLanguage.innerText = "To change the keyboard language press the 'Command' key.";
+    return vkInfoAboutChangingLanguage;
+  }
+
   changeCaps() {
     this.capsLockOn = !this.capsLockOn;
     this.keysSetup.forEach((item) => item.setCapsLock(this.capsLockOn));
   }
 
   setKeyboardLanguage() {
-    return keyboardEng
+    if (localStorage.getItem('vk-language')) {
+      this.keyboardLanguage = JSON.parse(localStorage.getItem('vk-language'));
+    } else {
+      this.keyboardLanguage = keyboardEng;
+      localStorage.setItem('vk-language', JSON.stringify(this.keyboardLanguage));
+    }
   }
 
   changeKeyboardLanguage() {
@@ -96,7 +111,8 @@ class VirtualKeyboard {
           this.keysSetup[index].changeLanguage(this.keyboardLanguage[idx][jdx], this.capsLockOn)
         )
       });
-    })
+    });
+    localStorage.setItem('vk-language', JSON.stringify(this.keyboardLanguage));
   }
 
   setUpKeyboardListeners() {
