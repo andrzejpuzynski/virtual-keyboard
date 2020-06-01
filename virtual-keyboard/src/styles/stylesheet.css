@@ -13,14 +13,14 @@
     /* -------------- colors  --------------- */
 
     --background: #222;
-    --title: #bbb;
+    --title: #666;
     --textAreaBackground: #111;
     --keyboard: #444;
     --key-inactive: #111;
     --key-active: #f00;
-    --key-symbol: #eee;
+    --key-symbol: #ddd;
     --border: #777;
-    --info: #355;
+    --info: #444;
 }
 
 body {
@@ -29,14 +29,21 @@ body {
 
 /* ---- Virtual Keyboard ---- */
 .vk-container {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
     margin: 0 auto;
     font-family: "Arial", sans-serif;
 }
 
 .vk-title {
     text-align: center;
-    font-size: 32px;
+    font-size: 40px;
+    font-weight: 100;
     color: var(--title);
+    margin-bottom: 20px;
 }
 
 .vk-textarea {
@@ -86,11 +93,15 @@ body {
 
 .vk-info-lang {
     text-align: center;
+    font-weight: 100;
     display: block;
-    width: 800px;
+    width:800px;
     margin: 50px auto 0px auto;
-    font-size: 23px;
+    font-size: 18px;
     color: var(--info);
+    letter-spacing: 12px;
+    line-height: 40px;
+    text-transform: uppercase;
 }
 
 /* ----------- keys size in 1 row  ------------- */
@@ -128,11 +139,19 @@ body {
 
 /* ----------- keys size in 5 row  ------------- */
 .vk-row:nth-child(5) .vk-key:nth-child(1) {
-    flex-grow: 4.0;
+    flex-grow: 1.0;
+}
+
+.vk-row:nth-child(5) .vk-key:nth-child(3) {
+    flex-grow: 0.1;
 }
 
 .vk-row:nth-child(5) .vk-key:nth-child(4) {
-    flex-grow: 12.0;
+    flex-grow: 5.0;
+}
+
+.vk-row:nth-child(5) .vk-key:nth-child(5) {
+    flex-grow: 0.1;
 }
 
 .vk-row:nth-child(5) .vk-key:nth-child(7) {
