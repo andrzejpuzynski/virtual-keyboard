@@ -3,7 +3,7 @@ export default class Key {
     lowerCase,
     upperCase,
     code,
-    value
+    value,
   }) {
     this.lowerCase = lowerCase;
     this.upperCase = upperCase;
@@ -24,8 +24,8 @@ export default class Key {
   }
 
   getvalue(capsOn) {
-    let val = this.value ? this.value : this.char(capsOn);
-    return val
+    const val = this.value ? this.value : this.char(capsOn);
+    return val;
   }
 
   setCapsLock(capsOn) {
@@ -44,6 +44,10 @@ export default class Key {
     this.lowerCase = newLanguage.lowerCase;
     this.upperCase = newLanguage.upperCase;
     this.code = newLanguage.code;
-    capsOn ? this.keyel.innerText = this.upperCase : this.keyel.innerText = this.lowerCase;
+    if (capsOn) {
+      this.keyel.innerText = this.upperCase;
+    } else {
+      this.keyel.innerText = this.lowerCase;
+    }
   }
 }
