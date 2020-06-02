@@ -35,6 +35,7 @@ class VirtualKeyboard {
 
     this.root = root;
     this.root.appendChild(this.vkContainer)
+    this.setUpMouseListeners();
   }
 
   createTitle(textOfTitle) {
@@ -154,6 +155,36 @@ class VirtualKeyboard {
           default:
             break;
       }
+    });
+  }
+
+  setUpMouseListeners() {
+    document.addEventListener('mousedown', (e) => {
+      if(e.target.className === "vk-key" || e.target.className === "vk-key press") {
+        const key = this.keysSetup.find((item) => item.keyel === e.target);
+        if (key.code &&key.code === "Tab") {
+          e.preventDefault();
+        }
+        if (key.code === 'CapsLock') {
+          this.changeCaps()
+        }
+        key.press();
+        this.generateChar(key);
+      };
+    });
+    document.addEventListener('mouseup', (e) => {
+       if (e.target.className === "vk-key press") {
+        const key = this.keysSetup.find((item) => item.keyel === e.target);
+        if (key.code !== "CapsLock") {
+          key.up();
+          if (key.lowerCase === 'Shift') {
+            this.shift = false;
+          }
+        }
+        if (key.code === "CapsLock") {
+          !this.capsLockOn && key.up();
+        }
+       }
     });
   }
 
