@@ -8,7 +8,7 @@ module.exports = {
   entry: "./virtual-keyboard/src/scripts/index.js",
   output: {
     filename: "main.[contentHash].js",
-    path: path.resolve(__dirname, "./virtual-keyboard/dist")
+    path: path.resolve(__dirname, "./virtual-keyboard/deploy")
   },
   module: {
     rules: [{
